@@ -4,7 +4,8 @@
 #include "Screen.h"
 #include "Player.h"
 #include <iostream>
-bool yesOrNo(){
+//Check player's responses to determine whether they wish to continue playing.
+char yesOrNo(){
     std::cout << "Do you want to keep playing? [Y/N]: ";
     char answer;
     std::cin >> answer;
@@ -17,25 +18,21 @@ bool yesOrNo(){
     }
     return answer;
 }
-bool approveMove(){
+//A gutted version of what would have been a function to move the player
+std::string approveMove(Player play){
     std::cout << "In what direction do you want to move? [U/D/L/R]: ";
-    char answer;
+    std::string answer;
     std::cin >> answer;
-    answer = toupper(answer);
-    while (answer != 'U' && answer != 'D' && answer != 'L' && answer != 'R' )
-    {
-        std::cout << "Error. Please retype your response. [U/D/L/R]: ";
-        std::cin >> answer;
-        answer = toupper(answer);
-    }
     return answer;
 }
+//a gutted version of a function to check whether a place is blocked by a wall
 bool canMove (Screen screen, char answer, Player play)
 {
     Pixel* screenInPixels = screen.getScreen();
     std::cout<<screenInPixels;
     return true;
 }
+//takes care of main game logic
 int main()
 {
     std::cout << "test"<<std::endl;
@@ -47,8 +44,10 @@ int main()
 
     }
     main_screen.update(mainPlayer);
-    canMove(main_screen, 'D', mainPlayer);
-
+    while (yesOrNo()=='Y')
+    {
+        approveMove(mainPlayer);
+    }
     /*while (yesOrNo() == 'Y')
     {
 
