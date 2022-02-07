@@ -32,7 +32,7 @@ bool Player::operator==(int *otherPosition)
     }
     return false;
 }
-/*bool Player::operator>(Pixel otherPosition)
+bool Player::operator>(Pixel otherPosition)
 {
     if (otherPosition.wall)
     {
@@ -42,9 +42,9 @@ bool Player::operator==(int *otherPosition)
         return false;
     }
 
-}*/
-/*std::ostream& Player::operator<<(std::ostream& out)
+}
+std::ostream& Player::operator<<(std::ostream& out)
 {
     out << x;
     return out;
-}*/
+}

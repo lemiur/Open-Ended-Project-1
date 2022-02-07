@@ -14,8 +14,8 @@ class Player
     public:
         void movePlayer (directions direction);
         bool operator==(int *otherPosition);
-        //bool operator>(struct Pixel otherPosition);
-        //std::ostream& operator<<(std::ostream& out);
+        bool operator>(struct Pixel otherPosition);
+        std::ostream& operator<<(std::ostream& out);
 
 
 };
