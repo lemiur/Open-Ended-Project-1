@@ -24,6 +24,14 @@ void Player::movePlayer(directions direction)
         x++;
     }
 }
+int Player::getX()
+{
+    return x;
+}
+int Player::getY()
+{
+    return y;
+}
 bool Player::operator==(int *otherPosition)
 {
     if (otherPosition[0] == x && otherPosition[1] == y)
@@ -47,4 +55,8 @@ std::ostream& Player::operator<<(std::ostream& out)
 {
     out << x;
     return out;
+}
+bool Player::operator<=(Pixel otherPosition)
+{
+    return !(*this>otherPosition);
 }

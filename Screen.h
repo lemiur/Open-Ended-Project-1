@@ -20,6 +20,12 @@ struct Pixel {
             wall = true;
         }
     }
+    std::ostream& operator<<(std::ostream& out)
+    {
+        out << wall;
+        return out;
+    }
+
 };
 class Screen
 {
@@ -28,6 +34,7 @@ class Screen
         Player viewer;
     public:
         void setPixel(int x, int y, bool newWall);
+        Pixel *getScreen();
         Pixel getPixel(int x, int y);
         void update(Player viewer);
 };
